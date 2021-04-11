@@ -1,10 +1,10 @@
 import articles from '../support/pages/articles'
-import Routes from '../support/routes'
+import Routes from  '../support/routes'
 
 describe('Publicação', () => {
     
     beforeEach(() => {
-      
+    
         // preciso inicializar as rotas em todas  os testes ? -> Não, somente uma vez
         //o que acontece se eu mudar o apelido de uma rota? -> Contrato
 
@@ -17,7 +17,6 @@ describe('Publicação', () => {
         //Ação
        articles.preencherFormulario()
        articles.submeterPublicacao()
-
        //Verificação
        articles.verificarSeAPublicacaoFoiCriadaComSucesso()
        

@@ -10,15 +10,15 @@ Cypress.Commands.add('backgroundLogin', () => {
             body: {
                 user: {
                     email: 'agilizei-rwc@mail.com',
-                password: "12345678"
+                password: '12345678'
                 }
             }
         }).then((loginResponse) => {
-            cy.log(loginResponse.body)
+            console.log(loginResponse.body)
             cy.log(loginResponse.body.user.token)
 
             cy.visit('/', {
-               onbeforeunload: (win)  => {
+               onBeforeLoad: (win)  => {
                    win.localStorage.setItem('jwtToken', loginResponse.body.user.token)
                }
             })
